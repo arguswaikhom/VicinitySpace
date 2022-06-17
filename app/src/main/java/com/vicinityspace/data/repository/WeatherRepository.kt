@@ -5,8 +5,9 @@ import com.vicinityspace.data.model.Weather
 import javax.inject.Inject
 
 class WeatherRepository @Inject constructor(private val apiHelperImpl: APIHelperImpl) {
-    private suspend fun getCurrTemp() = apiHelperImpl.getCurrTemp()
-    private suspend fun getForecasts() = apiHelperImpl.getForecasts()
+    private suspend fun getCurrTemp(location: String) = apiHelperImpl.getCurrTemp(location)
+    private suspend fun getForecasts(location: String) = apiHelperImpl.getForecasts(location)
 
-    suspend fun getWeather() = Weather(getCurrTemp(), getForecasts())
+    suspend fun getWeather(location: String) =
+        Weather(getCurrTemp(location), getForecasts(location))
 }

@@ -1,5 +1,5 @@
 package com.vicinityspace.ui.intent
 
 sealed class WeatherIntent {
-    object FetchWeather : WeatherIntent()
+    class FetchWeather(val location: String) : WeatherIntent()
 }

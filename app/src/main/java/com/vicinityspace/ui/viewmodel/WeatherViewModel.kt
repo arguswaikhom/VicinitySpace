@@ -26,17 +26,17 @@ class WeatherViewModel @Inject constructor(private val repository: WeatherReposi
         viewModelScope.launch {
             fetchWeather.consumeAsFlow().collect {
                 when (it) {
-                    is WeatherIntent.FetchWeather -> fetchWeather()
+                    is WeatherIntent.FetchWeather -> fetchWeather(it.location)
                 }
             }
         }
     }
 
-    private fun fetchWeather() {
+    private fun fetchWeather(location: String) {
         viewModelScope.launch {
             _state.value = WeatherState.Fetching
             _state.value = try {
-                WeatherState.Content(repository.getWeather())
+                WeatherState.Content(repository.getWeather(location))
             } catch (e: Exception) {
                 WeatherState.Error
             }

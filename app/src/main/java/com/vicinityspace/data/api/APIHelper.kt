@@ -4,7 +4,7 @@ import com.vicinityspace.data.model.Forecast
 import com.vicinityspace.data.model.Temperature
 
 interface APIHelper {
-    suspend fun getCurrTemp(): Temperature
+    suspend fun getCurrTemp(location: String): Temperature
 
-    suspend fun getForecasts(): List<Forecast>
+    suspend fun getForecasts(location: String): List<Forecast>
 }

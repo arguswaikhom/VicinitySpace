@@ -28,6 +28,8 @@ class WeatherActivity : AppCompatActivity() {
 
     private val weatherViewModel: WeatherViewModel by viewModels()
 
+    private val location: String = "Bangalore"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -61,7 +63,7 @@ class WeatherActivity : AppCompatActivity() {
                 binding.content.root.visibility = View.VISIBLE
                 binding.content.forecastRv.visibility = View.GONE
 
-                setTemperature("Bangalore", state.weather.temperature.toCelsius())
+                setTemperature(location, state.weather.temperature.toCelsius())
                 setForecasts(state.weather.forecasts)
             }
         }
@@ -86,7 +88,7 @@ class WeatherActivity : AppCompatActivity() {
 
     private fun setFetchWeatherIntent() {
         lifecycleScope.launch {
-            weatherViewModel.fetchWeather.send(WeatherIntent.FetchWeather)
+            weatherViewModel.fetchWeather.send(WeatherIntent.FetchWeather(location))
         }
     }
 
