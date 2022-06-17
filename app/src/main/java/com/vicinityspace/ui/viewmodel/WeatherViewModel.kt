@@ -3,18 +3,20 @@ package com.vicinityspace.ui.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.vicinityspace.data.model.Temperature
-import com.vicinityspace.data.model.Weather
 import com.vicinityspace.data.repository.WeatherRepository
 import com.vicinityspace.ui.intent.WeatherIntent
 import com.vicinityspace.ui.viewstate.WeatherState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class WeatherViewModel(private val repository: WeatherRepository) : ViewModel() {
+@HiltViewModel
+class WeatherViewModel @Inject constructor(private val repository: WeatherRepository) :
+    ViewModel() {
 
     val fetchWeather = Channel<WeatherIntent>(Channel.UNLIMITED)
     private val _state = MutableStateFlow<WeatherState>(WeatherState.Fetching)

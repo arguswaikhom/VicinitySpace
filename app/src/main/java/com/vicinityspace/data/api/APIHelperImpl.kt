@@ -2,8 +2,11 @@ package com.vicinityspace.data.api
 
 import com.vicinityspace.data.model.Forecast
 import com.vicinityspace.data.model.Temperature
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class APIHelperImpl(private val apiService: APIService) : APIHelper {
+@Singleton
+class APIHelperImpl @Inject constructor(private val apiService: APIService) : APIHelper {
 
     override suspend fun getCurrTemp(): Temperature {
         return apiService.getCurrTemp()
