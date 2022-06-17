@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="large_margin">32dp</dimen>
+    <dimen name="normal_margin">16dp</dimen>
+
+    <dimen name="temp_margin_top">56dp</dimen>
+    <dimen name="temp_margin_bottom">62dp</dimen>
+
+    <dimen name="vertical_divider_height">1dp</dimen>
+    <dimen name="progress_indicator_size">96dp</dimen>
+
+    <dimen name="error_text_size">54sp</dimen>
+    <dimen name="temp_text_size">96sp</dimen>
+    <dimen name="forecast_text_size">16sp</dimen>
+    <dimen name="location_text_size">36sp</dimen>
+</resources>

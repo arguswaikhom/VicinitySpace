@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/temp_margin_top"
+        android:layout_marginBottom="@dimen/temp_margin_bottom"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/temp_tv"
+            style="@style/TempTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="20°" />
+
+        <TextView
+            android:id="@+id/location_tv"
+            style="@style/LocationTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Bangalore" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/forecast_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/normal_margin"
+        android:paddingTop="@dimen/normal_margin"
+        android:paddingEnd="@dimen/normal_margin"
+        app:layoutManager="LinearLayoutManager"
+        tools:itemCount="4"
+        tools:listitem="@layout/forecast_item_view" />
+</LinearLayout>
