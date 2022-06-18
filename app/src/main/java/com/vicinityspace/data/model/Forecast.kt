@@ -10,7 +10,7 @@ data class Forecast(
     val temperature: Temperature
 )
 
-class ForecastResponse(
+data class ForecastResponse(
     @SerializedName("list")
     @JsonAdapter(ForecastDeserializer::class)
     val forecasts: List<Forecast>

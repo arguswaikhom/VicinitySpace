@@ -15,14 +15,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/temp_tv"
+            android:id="@+id/tempTv"
             style="@style/TempTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="20°" />
 
         <TextView
-            android:id="@+id/location_tv"
+            android:id="@+id/locationTv"
             style="@style/LocationTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/forecast_rv"
+        android:id="@+id/forecastRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"

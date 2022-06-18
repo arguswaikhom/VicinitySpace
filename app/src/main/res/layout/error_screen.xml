@@ -14,7 +14,7 @@
         android:text="@string/error_msg" />
 
     <Button
-        android:id="@+id/retry_btn"
+        android:id="@+id/retryBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"

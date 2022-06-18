@@ -21,12 +21,12 @@
             android:layout_alignParentLeft="true"
             android:layout_marginEnd="@dimen/normal_margin"
             android:layout_marginRight="@dimen/normal_margin"
-            android:layout_toStartOf="@+id/temp_tv"
-            android:layout_toLeftOf="@+id/temp_tv"
+            android:layout_toStartOf="@+id/tempTv"
+            android:layout_toLeftOf="@+id/tempTv"
             tools:text="Tuesday" />
 
         <TextView
-            android:id="@+id/temp_tv"
+            android:id="@+id/tempTv"
             style="@style/ForecastItemStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

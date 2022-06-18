@@ -18,9 +18,7 @@ class WeatherViewModel @Inject constructor(private val repository: WeatherReposi
     ViewModel() {
     val fetchWeather = Channel<WeatherIntent>(Channel.UNLIMITED)
     private val _state = MutableStateFlow<WeatherState>(WeatherState.Fetching)
-
-    val state: StateFlow<WeatherState>
-        get() = _state
+    val state: StateFlow<WeatherState> get() = _state
 
     init {
         viewModelScope.launch {
